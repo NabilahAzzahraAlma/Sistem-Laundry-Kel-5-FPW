@@ -23,3 +23,6 @@ M.Fadli
 N.A Alma
 Marsya T.N
 Raffi N.F
+
+jangan Lupa Buat Branch Baru
+Lalu Composser Instal dan NPM Instal
