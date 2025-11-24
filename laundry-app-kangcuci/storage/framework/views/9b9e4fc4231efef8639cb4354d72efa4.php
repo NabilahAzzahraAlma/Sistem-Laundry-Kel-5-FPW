@@ -1,216 +1,232 @@
-<?php if (isset($component)) { $__componentOriginal69dc84650370d1d4dc1b42d016d7226b = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal69dc84650370d1d4dc1b42d016d7226b = $attributes; } ?>
-<?php $component = App\View\Components\GuestLayout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('guest-layout'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\App\View\Components\GuestLayout::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-    <!-- Session Status -->
-    <?php if (isset($component)) { $__componentOriginal7c1bf3a9346f208f66ee83b06b607fb5 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal7c1bf3a9346f208f66ee83b06b607fb5 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.auth-session-status','data' => ['class' => 'mb-4','status' => session('status')]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('auth-session-status'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['class' => 'mb-4','status' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(session('status'))]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal7c1bf3a9346f208f66ee83b06b607fb5)): ?>
-<?php $attributes = $__attributesOriginal7c1bf3a9346f208f66ee83b06b607fb5; ?>
-<?php unset($__attributesOriginal7c1bf3a9346f208f66ee83b06b607fb5); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal7c1bf3a9346f208f66ee83b06b607fb5)): ?>
-<?php $component = $__componentOriginal7c1bf3a9346f208f66ee83b06b607fb5; ?>
-<?php unset($__componentOriginal7c1bf3a9346f208f66ee83b06b607fb5); ?>
-<?php endif; ?>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | Laundry App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* ====== GLOBAL LAYOUT (bg hijau daun + center) ====== */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* Menggunakan Font yang Lebih Umum */
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #388e3c, #81c784); /* Hijau daun gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    <form method="POST" action="<?php echo e(route('login')); ?>">
-        <?php echo csrf_field(); ?>
+        /* PERBAIKAN 1: Menggunakan Flexbox untuk memusatkan dan menata elemen */
+        .login-wrapper {
+            /* Tampilan di Desktop: Form dan Gambar bersebelahan */
+            display: flex;
+            /* Menggunakan 'center' agar form dan gambar berada di tengah wrapper */
+            justify-content: center; 
+            align-items: center;
+            width: 90%; /* Sedikit lebih lebar */
+            max-width: 1000px; /* Ukuran maksimal container */
+            background: white; /* Beri background putih pada wrapper */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* Bayangan yang lebih tegas */
+            overflow: hidden; /* Penting agar gambar tidak keluar dari container */
+        }
 
-        <!-- Email Address -->
-        <div>
-            <?php if (isset($component)) { $__componentOriginale3da9d84bb64e4bc2eeebaafabfb2581 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginale3da9d84bb64e4bc2eeebaafabfb2581 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-label','data' => ['for' => 'email','value' => __('Email')]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('input-label'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['for' => 'email','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(__('Email'))]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginale3da9d84bb64e4bc2eeebaafabfb2581)): ?>
-<?php $attributes = $__attributesOriginale3da9d84bb64e4bc2eeebaafabfb2581; ?>
-<?php unset($__attributesOriginale3da9d84bb64e4bc2eeebaafabfb2581); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginale3da9d84bb64e4bc2eeebaafabfb2581)): ?>
-<?php $component = $__componentOriginale3da9d84bb64e4bc2eeebaafabfb2581; ?>
-<?php unset($__componentOriginale3da9d84bb64e4bc2eeebaafabfb2581); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginal18c21970322f9e5c938bc954620c12bb = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal18c21970322f9e5c938bc954620c12bb = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.text-input','data' => ['id' => 'email','class' => 'block mt-1 w-full','type' => 'email','name' => 'email','value' => old('email'),'required' => true,'autofocus' => true,'autocomplete' => 'username']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('text-input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['id' => 'email','class' => 'block mt-1 w-full','type' => 'email','name' => 'email','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(old('email')),'required' => true,'autofocus' => true,'autocomplete' => 'username']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal18c21970322f9e5c938bc954620c12bb)): ?>
-<?php $attributes = $__attributesOriginal18c21970322f9e5c938bc954620c12bb; ?>
-<?php unset($__attributesOriginal18c21970322f9e5c938bc954620c12bb); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal18c21970322f9e5c938bc954620c12bb)): ?>
-<?php $component = $__componentOriginal18c21970322f9e5c938bc954620c12bb; ?>
-<?php unset($__componentOriginal18c21970322f9e5c938bc954620c12bb); ?>
-<?php endif; ?>
-            <?php if (isset($component)) { $__componentOriginalf94ed9c5393ef72725d159fe01139746 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalf94ed9c5393ef72725d159fe01139746 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-error','data' => ['messages' => $errors->get('email'),'class' => 'mt-2']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('input-error'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['messages' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($errors->get('email')),'class' => 'mt-2']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalf94ed9c5393ef72725d159fe01139746)): ?>
-<?php $attributes = $__attributesOriginalf94ed9c5393ef72725d159fe01139746; ?>
-<?php unset($__attributesOriginalf94ed9c5393ef72725d159fe01139746); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalf94ed9c5393ef72725d159fe01139746)): ?>
-<?php $component = $__componentOriginalf94ed9c5393ef72725d159fe01139746; ?>
-<?php unset($__componentOriginalf94ed9c5393ef72725d159fe01139746); ?>
-<?php endif; ?>
-        </div>
+        /* ====== LOGIN FORM STYLING ====== */
+        .login-container {
+            /* PERBAIKAN 2: Alokasi lebar 50% untuk form */
+            width: 50%; 
+            padding: 40px;
+            /* Hapus background: white; karena sudah ada di .login-wrapper */
+            text-align: center;
+            /* Tambahkan padding di desktop */
+            padding-right: 40px; 
+        }
 
-        <!-- Password -->
-        <div class="mt-4">
-            <?php if (isset($component)) { $__componentOriginale3da9d84bb64e4bc2eeebaafabfb2581 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginale3da9d84bb64e4bc2eeebaafabfb2581 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-label','data' => ['for' => 'password','value' => __('Password')]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('input-label'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['for' => 'password','value' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute(__('Password'))]); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginale3da9d84bb64e4bc2eeebaafabfb2581)): ?>
-<?php $attributes = $__attributesOriginale3da9d84bb64e4bc2eeebaafabfb2581; ?>
-<?php unset($__attributesOriginale3da9d84bb64e4bc2eeebaafabfb2581); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginale3da9d84bb64e4bc2eeebaafabfb2581)): ?>
-<?php $component = $__componentOriginale3da9d84bb64e4bc2eeebaafabfb2581; ?>
-<?php unset($__componentOriginale3da9d84bb64e4bc2eeebaafabfb2581); ?>
-<?php endif; ?>
+        .login-container h1 {
+            margin-bottom: 25px;
+            color: #388e3c; /* Hijau daun */
+            font-size: 1.8em; /* Sedikit lebih besar */
+            font-weight: 700;
+        }
 
-            <?php if (isset($component)) { $__componentOriginal18c21970322f9e5c938bc954620c12bb = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginal18c21970322f9e5c938bc954620c12bb = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.text-input','data' => ['id' => 'password','class' => 'block mt-1 w-full','type' => 'password','name' => 'password','required' => true,'autocomplete' => 'current-password']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('text-input'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['id' => 'password','class' => 'block mt-1 w-full','type' => 'password','name' => 'password','required' => true,'autocomplete' => 'current-password']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal18c21970322f9e5c938bc954620c12bb)): ?>
-<?php $attributes = $__attributesOriginal18c21970322f9e5c938bc954620c12bb; ?>
-<?php unset($__attributesOriginal18c21970322f9e5c938bc954620c12bb); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal18c21970322f9e5c938bc954620c12bb)): ?>
-<?php $component = $__componentOriginal18c21970322f9e5c938bc954620c12bb; ?>
-<?php unset($__componentOriginal18c21970322f9e5c938bc954620c12bb); ?>
-<?php endif; ?>
+        .form-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
 
-            <?php if (isset($component)) { $__componentOriginalf94ed9c5393ef72725d159fe01139746 = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalf94ed9c5393ef72725d159fe01139746 = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-error','data' => ['messages' => $errors->get('password'),'class' => 'mt-2']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('input-error'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['messages' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($errors->get('password')),'class' => 'mt-2']); ?>
-<?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalf94ed9c5393ef72725d159fe01139746)): ?>
-<?php $attributes = $__attributesOriginalf94ed9c5393ef72725d159fe01139746; ?>
-<?php unset($__attributesOriginalf94ed9c5393ef72725d159fe01139746); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalf94ed9c5393ef72725d159fe01139746)): ?>
-<?php $component = $__componentOriginalf94ed9c5393ef72725d159fe01139746; ?>
-<?php unset($__componentOriginalf94ed9c5393ef72725d159fe01139746); ?>
-<?php endif; ?>
-        </div>
+        label {
+            display: block;
+            font-size: 0.9em;
+            color: #333;
+            margin-bottom: 6px;
+        }
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600"><?php echo e(__('Remember me')); ?></span>
-            </label>
-        </div>
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px; /* Padding lebih besar */
+            border: 1px solid #ccc;
+            border-radius: 8px; /* Sudut lebih membulat */
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.2s;
+        }
 
-        <div class="flex items-center justify-end mt-4">
-            <?php if(Route::has('password.request')): ?>
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="<?php echo e(route('password.request')); ?>">
-                    <?php echo e(__('Forgot your password?')); ?>
+        input:focus {
+            outline: none;
+            border-color: #4caf50; /* Hijau yang lebih cerah saat fokus */
+        }
 
-                </a>
+        /* ====== ACTIONS AND BUTTON ====== */
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px; /* Jarak lebih baik */
+            margin-bottom: 20px;
+        }
+
+        .actions a {
+            font-size: 0.9em;
+            color: #388e3c; 
+            text-decoration: none;
+        }
+
+        .actions a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: #fbc02d; /* Kuning */
+            color: white;
+            border: none;
+            border-radius: 8px; /* Sudut lebih membulat */
+            padding: 12px 0;
+            width: 100%;
+            font-size: 1.1em; /* Sedikit lebih besar */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        button:hover {
+            background-color: #f9a825; 
+            transform: translateY(-1px); /* Efek subtle saat hover */
+        }
+
+        .register-link {
+            margin-top: 25px;
+            font-size: 0.95em;
+        }
+
+        .register-link a {
+            color: #388e3c; 
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            background: #ffcdd2;
+            color: #b71c1c;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            border: 1px solid #e57373;
+        }
+
+        /* ====== Gambar Styling ====== */
+        .image-container {
+            /* PERBAIKAN 3: Alokasi lebar 50% untuk gambar */
+            width: 50%;
+            /* Beri background kontras untuk kolom gambar */
+            background-color: #f5f5f5; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 20px; /* Padding di dalam container gambar */
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto; 
+            border-radius: 8px; /* Sudut membulat pada gambar */
+            /* Pastikan gambar mengisi ruang dengan baik tanpa meregang */
+            object-fit: cover; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ====== RESPONSIVITAS (Mobile) ====== */
+        @media (max-width: 768px) {
+            .login-wrapper {
+                flex-direction: column; /* Tumpuk form dan gambar */
+                width: 90%;
+                /* Atur ulang background putih hanya pada container utama */
+                background: white; 
+                box-shadow: none;
+            }
+            .login-container {
+                width: 100%;
+                padding: 30px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Bayangan hanya di form */
+                border-radius: 10px;
+            }
+            .image-container {
+                /* Sembunyikan gambar di layar mobile atau berikan margin */
+                display: none; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <!-- Login Form -->
+        <div class="login-container">
+            <h1>Login Laundry App</h1>
+
+            <?php if($errors->any()): ?>
+                <div class="error"><?php echo e($errors->first()); ?></div>
             <?php endif; ?>
 
-            <?php if (isset($component)) { $__componentOriginald411d1792bd6cc877d687758b753742c = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginald411d1792bd6cc877d687758b753742c = $attributes; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.primary-button','data' => ['class' => 'ms-3']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('primary-button'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes(['class' => 'ms-3']); ?>
-                <?php echo e(__('Log in')); ?>
+            <form method="POST" action="<?php echo e(url('/login')); ?>">
+                <?php echo csrf_field(); ?>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Masukkan email" required autofocus>
+                </div>
 
-             <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginald411d1792bd6cc877d687758b753742c)): ?>
-<?php $attributes = $__attributesOriginald411d1792bd6cc877d687758b753742c; ?>
-<?php unset($__attributesOriginald411d1792bd6cc877d687758b753742c); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginald411d1792bd6cc877d687758b753742c)): ?>
-<?php $component = $__componentOriginald411d1792bd6cc877d687758b753742c; ?>
-<?php unset($__componentOriginald411d1792bd6cc877d687758b753742c); ?>
-<?php endif; ?>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Masukkan password" required>
+                </div>
+
+                <div class="actions">
+                    <label>
+                        <input type="checkbox" name="remember"> Ingat saya
+                    </label>
+                    <a href="<?php echo e(route('password.request')); ?>">Lupa password?</a>
+                </div>
+
+                <button type="submit">Masuk</button>
+
+                <div class="register-link">
+                    Belum punya akun?
+                    <a href="<?php echo e(route('register')); ?>">Daftar sekarang</a>
+                </div>
+            </form>
         </div>
-    </form>
- <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginal69dc84650370d1d4dc1b42d016d7226b)): ?>
-<?php $attributes = $__attributesOriginal69dc84650370d1d4dc1b42d016d7226b; ?>
-<?php unset($__attributesOriginal69dc84650370d1d4dc1b42d016d7226b); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginal69dc84650370d1d4dc1b42d016d7226b)): ?>
-<?php $component = $__componentOriginal69dc84650370d1d4dc1b42d016d7226b; ?>
-<?php unset($__componentOriginal69dc84650370d1d4dc1b42d016d7226b); ?>
-<?php endif; ?>
-<?php /**PATH C:\laragon\Raffi\www\Sistem-Laundry-Kel-5-FPW\laundry-app-kangcuci\resources\views/auth/login.blade.php ENDPATH**/ ?>
+
+        <!-- Image Container -->
+        <div class="image-container">
+            <!-- CATATAN: Pastikan gambar 'login view.jpg' ada di folder 'public/img/' proyek Laravel Anda. -->
+            <img src="<?php echo e(asset('img/login view.jpg')); ?>" alt="Laundry Image">
+        </div>
+    </div>
+</body>
+</html><?php /**PATH C:\laragon\Raffi\www\Sistem-Laundry-Kel-5-FPW\laundry-app-kangcuci\resources\views/auth/login.blade.php ENDPATH**/ ?>

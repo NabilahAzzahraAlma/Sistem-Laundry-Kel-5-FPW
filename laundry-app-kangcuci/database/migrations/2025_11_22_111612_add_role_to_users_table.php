@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            // Tambahkan kolom 'role' setelah kolom 'email'
-            // Default: 'client' (untuk pengguna laundry biasa)
-            $table->string('role')->default('client')->after('email');
+    if (!Schema::hasColumn('users', 'role')) {
+        $table->string('role')->default('client')->after('email');
+    }
         });
     }
 

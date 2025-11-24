@@ -11,22 +11,36 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // 1. Tabel Users
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_user'); // Primary Key Custom
             $table->string('name');
             $table->string('email')->unique();
+
+            // --- TAMBAHAN WAJIB (Agar tidak error saat Seed/Login) ---
             $table->timestamp('email_verified_at')->nullable();
+            // --------------------------------------------------------
+
+            $table->string('phone')->nullable();
+            $table->text('address')->nullable();
             $table->string('password');
+
+            // --- TAMBAHAN WAJIB (Untuk fitur 'Remember Me') ---
             $table->rememberToken();
+            // --------------------------------------------------
+
+            $table->enum('role', ['admin', 'customer', 'staff'])->default('customer');
             $table->timestamps();
         });
 
+        // 2. Tabel Password Reset Tokens
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
 
+        // 3. Tabel Sessions
         Schema::create('sessions', function (Blueprint $table) {
             $table->string('id')->primary();
             $table->foreignId('user_id')->nullable()->index();

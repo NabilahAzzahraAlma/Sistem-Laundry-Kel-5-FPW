@@ -31,7 +31,7 @@
 
   <!-- SIDEBAR -->
   <div class="sidebar">
-    <h4 class="mb-4">KangCuciExpress</h4>
+    <h4 class="mb-4">🧺 Laundry</h4>
 
     <a class="d-block text-white" href="<?php echo e(route('dashboard')); ?>">Dashboard</a>
     <a class="d-block text-white" href="<?php echo e(route('orders.index')); ?>">Orders</a>

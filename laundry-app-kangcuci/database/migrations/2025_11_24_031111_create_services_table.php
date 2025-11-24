@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+      Schema::create('services', function (Blueprint $table) {
+        $table->id('id_service'); // Atau $table->id(); tergantung setup Anda
+        $table->unsignedBigInteger('id_user')->default(1); // Tambah default 1 biar aman
+        $table->string('category');
+        $table->decimal('price_per_kg', 12, 0);
+
+        // PASTIKAN 3 KOLOM INI ADA:
+        $table->string('duration');
+        $table->string('min_order');
+        $table->string('unit');
+
+        $table->string('parfume_name')->nullable();
+        $table->timestamps();
+    });
+}
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('services');
+    }
+    };
