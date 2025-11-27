@@ -29,7 +29,7 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                @yield('content')  <!-- This is where the content from your specific view will go -->
             </main>
         </div>
     </body>
